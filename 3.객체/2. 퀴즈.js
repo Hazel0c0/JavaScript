@@ -31,37 +31,38 @@ var userInfo = {
 // 6. 로그인이 성공할때까지 반복하세요.
 var login = true;
 while (login) {
-  
+
   //1. 사용자에게 계정을 입력받으세요.
   var input_id = prompt('계정을 입력해주세요');
-  
+
   //2. 입력된 계정이 존재하는 계정이 아니라면
   //    "존재하지 않는 회원입니다"를 출력하세요.
   var userList = userInfo.userList;
   var id_ck = false;
-    //id ck
+  //id ck
   for (var i of userList) {
     if (input_id === i.account) {
       alert('존재하는 회원입니다');
       id_ck = true;
-
-      while (login) {  //pwd ck
-        //3. 계정이 존재한다면 비밀번호를 입력받으세요.
-        var input_pwd = prompt('비밀번호를 입력해주세요');
-
-        if (i.password === input_pwd) {
-          //4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
-          //"xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
-          alert(`${i.username}님 환영합니다!`);
-          login=false;
-        } else {
-          // 5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
-          alert('비밀번호가 틀렸습니다');
-        }
-      }
+      break;
     }
   }
   if (!(id_ck)) {
     alert('존재하지 않는 회원입니다');
+  }
+
+  while (id_ck) { //pwd ck
+    //3. 계정이 존재한다면 비밀번호를 입력받으세요.
+    var input_pwd = prompt('비밀번호를 입력해주세요');
+
+    if (i.password === input_pwd) {
+      //4. 비밀번호가 입력한 아이디에 대응해서 일치한다면
+      //"xxx님 환영합니다!"을 출력하고 반복문을 탈출하세요.
+      alert(`${i.username}님 환영합니다!`);
+      login = false;
+    } else {
+      // 5. 비밀번호가 다르다면 "비밀번호가 틀렸습니다" 를 출력하세요.
+      alert('비밀번호가 틀렸습니다');
+    }
   }
 }
