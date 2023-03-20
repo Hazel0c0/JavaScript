@@ -30,16 +30,20 @@ var userInfo = {
 };
 
 //1. 사용자에게 계정을 입력받으세요.
-var input_id = prompt('계정을 입력해주세요');
-
+// var input_id = prompt('계정을 입력해주세요');
+var input_id = 'kim1234';
 //2. 입력된 계정이 존재하는 계정이 아니라면
 //    "존재하지 않는 회원입니다"를 출력하세요.
-if(!("account" in userInfo.userList)) {
-    alert('존재하지 않는 회원입니다');
-} else {
-    var input_psw = prompt('비밀번호를 입력하세요');
-}
 
-if ("password" in userInfo.userList) {
-    
+// console.log(userList[1]);
+//{ account: 'park9876', password: 'ppp9999', username: '박찬호' }
+
+//계정 입력받기
+console.log(userInfo.userList[0].account); //kim1234
+
+for (var i of userInfo.userList){
+    if (input_id === userInfo.userList[i].account) {
+        console.log('존재하는 회원입니다');
+        // alert('존재하는 회원입니다');
+    }
 }
