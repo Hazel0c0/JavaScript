@@ -39,10 +39,14 @@ var input_id = 'kim1234';
 //{ account: 'park9876', password: 'ppp9999', username: '박찬호' }
 
 //계정 입력받기
-console.log(userInfo.userList[0].account); //kim1234
+// console.log(userInfo.userList);
+// console.log(userInfo.userList[0].account); //kim1234
+// console.log(input_id);
 
 for (var i of userInfo.userList){
-    if (input_id === userInfo.userList[i].account) {
+    // console.log(i);
+    // console.log(i.account);  //userInfo.userList[i].account 틀림
+    if (input_id === i.account) {
         console.log('존재하는 회원입니다');
         // alert('존재하는 회원입니다');
     }
