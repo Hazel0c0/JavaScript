@@ -29,4 +29,25 @@ const userList = [
   },
 ];
 
-userList
+
+
+
+
+
+
+
+
+
+
+
+//.filter [{5},{5},{5}] -> 프로퍼티의 개수는 변하지 않음, length는 변함
+//.map ['','',''] -> 프로퍼티 변함, length 그대로
+
+
+
+userList // [{5}, {5}, {5}, {5}]
+  .filter(user => user.address === '서울') // [{5}, {5}, {5}]
+  .map(user => user.hobbys[0]) // ['', '', '']
+  .forEach(hobby => {
+    console.log(`회원의 첫번째 취미는 ${hobby}입니다.`);
+  }); 
