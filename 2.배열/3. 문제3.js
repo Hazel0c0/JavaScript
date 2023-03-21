@@ -1,6 +1,6 @@
 while (true) {
   var totalMember = +prompt('게임 인원 (2~4명)');
-  if (!(totalMember >= 2 && totalMember <= 4)) {
+  if (!(totalMember >= 2 && totalMember <= 4)) {//||
     alert('인원수를 다시 입력해주세요');
     continue;
   }
@@ -39,7 +39,7 @@ while (true) {
 
   var die = [];
   for (var i = 0; i < bullet; i++) {
-    die += i;
+    die += i;//push
   }
   break;
 }
