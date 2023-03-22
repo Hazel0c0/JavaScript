@@ -113,6 +113,10 @@ function inputAnswerAndValidate(gameData) {
 // 한 게임이 진행되는 함수
 function runUpDownGame(gameData) { //min,max,secret.. 데이터들이 필요함. 그냥 gameData를 받아서 사용하기
 
+  // gameData 디스트럭처링
+  // 디스트럭처링은 사본을 복사하는거라 변경해도 원본에 적용되지 않음
+  const {countDown, secret, answer}= gameData;
+
   while (true) {
 
     // const inputResultFlag = inputAnswerAndValidate(gameData);  
@@ -127,24 +131,24 @@ function runUpDownGame(gameData) { //min,max,secret.. 데이터들이 필요함.
     2. 객체에 사용자의 입력값도 저장 (*)
     */
     if (secret === answer) {
-      alert(`정답입니다! ${gameData.initCount - gameData.countDown}번만에 맞췄습니다!`);
+      alert(`정답입니다! ${initCount - countDown}번만에 맞췄습니다!`);
       gameData.gameEndFlag = true;
       break;
-    } else if (gameData.secret > gameData.answer) {
+    } else if (secret > answer) {
       alert(`UP!!`);
-      gameData.min = gameData.answer + 1;
+      gameData.min = answer + 1;
     } else {
       alert(`DOWN!!`);
-      gameData.max = gameData.answer - 1;
+      gameData.max = answer - 1;
     }
 
     // 추가 게임 종료 조건
-    if (gameData.countDown <= 0) {
-      alert(`응 너 졌어~~~ 정답은 ${gameData.secret}이었음ㅋㅋㅋ`);
+    if (countDown <= 0) {
+      alert(`응 너 졌어~~~ 정답은 ${secret}이었음ㅋㅋㅋ`);
       gameData.gameEndFlag = true;
       break;
     } else {
-      alert(`${gameData.countDown}번의 기회가 남았습니다.`);
+      alert(`${countDown}번의 기회가 남았습니다.`);
     }
 
   } // end each game loop
