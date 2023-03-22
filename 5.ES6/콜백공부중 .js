@@ -1,31 +1,31 @@
 const userList = [{
-  account: 'abc1234',
-  userName: '대길이',
-  job: '추노',
-  address: '서울',
-  hobbys: ['수영', '축구', '테니스']
-},
-{
-  account: 'banana',
-  userName: '빠나나',
-  job: '과일',
-  address: '서울',
-  hobbys: ['푸드파이팅', '테니스']
-},
-{
-  account: 'park1234',
-  userName: '주차왕',
-  job: '발렛파킹',
-  address: '경기',
-  hobbys: ['족구', '축구', '테니스', '영화감상']
-},
-{
-  account: 'fire',
-  userName: '불꽃남자카리스마',
-  job: '게이머',
-  address: '서울',
-  hobbys: ['독서', '테니스']
-},
+    account: 'abc1234',
+    userName: '대길이',
+    job: '추노',
+    address: '서울',
+    hobbys: ['수영', '축구', '테니스']
+  },
+  {
+    account: 'banana',
+    userName: '빠나나',
+    job: '과일',
+    address: '서울',
+    hobbys: ['푸드파이팅', '테니스']
+  },
+  {
+    account: 'park1234',
+    userName: '주차왕',
+    job: '발렛파킹',
+    address: '경기',
+    hobbys: ['족구', '축구', '테니스', '영화감상']
+  },
+  {
+    account: 'fire',
+    userName: '불꽃남자카리스마',
+    job: '게이머',
+    address: '서울',
+    hobbys: ['독서', '테니스']
+  },
 ];
 
 // // 회원목록에서 회원정보를 출력하는 함수
@@ -170,77 +170,91 @@ const userNames = userList.map(user => user.address);
 // console.log('=========================');
 
 const appleBasket = [{
-  color: 'green',
-  sweet: 13
-},
-{
-  color: 'red',
-  sweet: 14
-},
-{
-  color: 'red',
-  sweet: 11
-},
-{
-  color: 'green',
-  sweet: 6
-},
-{
-  color: 'green',
-  sweet: 7
-},
-{
-  color: 'green',
-  sweet: 9
-},
+    color: 'green',
+    sweet: 13
+  },
+  {
+    color: 'red',
+    sweet: 14
+  },
+  {
+    color: 'red',
+    sweet: 11
+  },
+  {
+    color: 'green',
+    sweet: 6
+  },
+  {
+    color: 'green',
+    sweet: 7
+  },
+  {
+    color: 'green',
+    sweet: 9
+  },
 ];
 
 function greenApple() {
 
-const basket = appleBasket.filter(apple => apple.color === 'green' 
-            && apple.sweet >= 9);
-return basket.map(bk=>`이 사과는 ${bk.color}이며 당도가 ${bk.sweet}입니다`);
+  const basket = appleBasket
+    .filter(apple => apple.color === 'green' && apple.sweet >= 9)
+    .map(bk => `이 사과는 ${bk.color}이며 당도가 ${bk.sweet}입니다`);
+
+    return basket;
 }
 
-console.log(greenApple());
-// // 사과중 녹색이면서 당도가 9이상인 사과만 선별하여
-// // 이 사과는 xxx색이며 당도가 xxx입니다.
-// // 라는 문자열이 모여있는 배열을 리턴하세요.
+// console.log(greenApple());
+// 사과중 녹색이면서 당도가 9이상인 사과만 선별하여
+// 이 사과는 xxx색이며 당도가 xxx입니다.
+// 라는 문자열이 모여있는 배열을 리턴하세요.
 
 // console.log('=======================');
 
 
-// const mappedApples =
-//   appleBasket
-//   .filter(apple => apple.color === 'green' && apple.sweet >= 9)
-//   .map(apple => `이 사과는 ${apple.color}색이면서 당도는 ${apple.sweet}입니다.`);
+const mappedApples =
+  appleBasket
+  .filter(apple => apple.color === 'green' && apple.sweet >= 9)
+  .map(apple => `이 사과는 ${apple.color}색이면서 당도는 ${apple.sweet}입니다.`);
 
 // console.log(mappedApples);
 
 
 // console.log('==================');
 
-// // userList에서 서울사는 user들의 
-// // 첫번째 취미만 배열에 모아서 리턴
-// // ['수영', '푸드파이팅', '독서']
-// // 회원의 첫번째 취미는  xxx입니다.
+// userList에서 서울사는 user들의 
+// 첫번째 취미만 배열에 모아서 리턴
+// ['수영', '푸드파이팅', '독서']
+// 회원의 첫번째 취미는  xxx입니다.
 
-// userList // [{5}, {5}, {5}, {5}]
-//   .filter(user => user.address === '서울') // [{5}, {5}, {5}]
-//   .map(user => user.hobbys[0]) // ['', '', '']
-//   .forEach(hobby => {
-//     console.log(`회원의 첫번째 취미는 ${hobby}입니다.`);
-//   });
+
+const firstHobby 
+  = userList.filter(user=>user.address==='서울')
+            .map(user=>user.hobbys[0]);
+  for(let fH of firstHobby){
+    // console.log(`회원님의 첫번째 취미는 ${fH}`);
+  }
+
+
+
+
+
+userList // [{5}, {5}, {5}, {5}]
+  .filter(user => user.address === '서울') // [{5}, {5}, {5}]
+  .map(user => user.hobbys[0]) // ['', '', '']
+  .forEach(hobby => {
+    // console.log(`회원의 첫번째 취미는 ${hobby}입니다.`);
+  });
 
 
 // console.log('=================================');
 
-// userList // [{5}, {5}, {5}, {5}]
-//   .filter(user => user.address === '서울') // [{5}, {5}, {5}]
-//   .map(user => ({
-//     firstHobby: user.hobbys[0],
-//     name: user.userName
-//   })) // [{2}, {2}, {2}]
-//   .forEach(info => {
-//     console.log(`${info.name}회원의 첫번째 취미는 ${info.firstHobby}입니다.`);
-//   });
+userList // [{5}, {5}, {5}, {5}]
+  .filter(user => user.address === '서울') // [{5}, {5}, {5}]
+  .map(user => ({
+    firstHobby: user.hobbys[0],
+    name: user.userName
+  })) // [{2}, {2}, {2}]
+  .forEach(info => {
+    console.log(`${info.name}회원의 첫번째 취미는 ${info.firstHobby}입니다.`);
+  });
