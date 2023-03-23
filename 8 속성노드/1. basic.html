@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="email" id="account" value="abc@gmail.com">
+
+  <script>
+    const typeAttr = {
+      name: 'type',
+      value: 'email'
+    };
+    const idAttr = {
+      name: 'id',
+      value: 'account'
+    };
+    const valueAttr = {
+      name: 'value',
+      value: 'abc@gmail.com'
+    };
+
+    // 유사배열
+    const NamedNodeMap = {
+      0: typeAttr,
+      1: idAttr,
+      2: valueAttr,
+      length: 3,
+      type: typeAttr,
+      id: idAttr,
+      value: valueAttr
+    };
+/*  
+    const $input = {
+      tagName: 'INPUT',
+      textContent: '',
+      attributes: NamedNodeMap
+    };
+*/
+    /* 유사배열
+    요소 노드 attributes : 에 저장됨 */
+    const $input=document.querySelector('input');
+    console.log($input.attributes.id.value);  //account
+    
+    $input.attributes.id.value='acc';  //id: "acc"
+    $input.attributes.value.value='졸려옹';  //id: "acc"
+    
+    // attributes 속성 안에 유사배열들이 있다
+
+
+    $input.hasAttributes.id;
+  </script>
+
+
+</body>
+
+</html>

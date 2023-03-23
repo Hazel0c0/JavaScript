@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box" id="item"title="안녕하세요"></div>
+
+  <script>
+
+    const $box =document.querySelector('.box');
+
+    //안녕하세요 값을 여기 저장하고 싶다
+    const hello = $box.getAttribute('title');
+    console.log(hello);
+
+  </script>
+</body>
+</html>
