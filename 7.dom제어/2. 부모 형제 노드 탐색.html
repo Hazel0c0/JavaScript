@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul id="fruits">
+      <li class="fr apple">사과</li>
+      <li class="fr banana">바나나</li>
+      <li class="fr grape">포도</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <p></p>
+  </div>
+
+  <script>
+    //ul 요소노드를 취득
+    const $fruits = document.getElementById('fruits');
+
+    const $wrap = $fruits.parentElement;
+
+    const [$apple,$banana,$grape] = [...$wrap.firstElementChild.children];
+                                        // div ul [li]
+    // const sameFlag = $banana.nextElementSibling === $apple;  //다음형제
+    const sameFlag = $banana.previousElementSibling === $apple;  //이전형제
+    console.log(sameFlag);
+
+    var foundElem =$apple.closest('.wrap');
+    console.log('찾은 요소:',foundElem);
+
+  </script>
+
+</body>
+
+</html>

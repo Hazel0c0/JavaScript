@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <ul id="fruits">
+      <li class="fr apple">사과</li>
+      <li class="fr banana">바나나</li>
+      <li class="fr grape">포도</li>
+    </ul>
+  </div>
+
+  <script>
+    // insertBefore(추가할거, 누구앞에 할건지)
+
+    // 노드이동
+    // $fruits.appendChild(기존태그); - 맨 마지막으로 이동함
+    //         .insertBefore (기존태그, 이동장소)
+
+
+    const $fruits = document.getElementById('fruits');
+    //새로운 li 생성
+    const $newLi = $fruits.firstElementChild.clonNode();
+    $newLi.textContent = '복숭아';
+
+    // 노드 교체 (new , old-기존것)
+    $fruits.replaceChild($newLi, $fruits.firstElementChild);
+
+  </script>
+</body>
+
+</html>
