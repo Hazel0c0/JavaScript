@@ -1,42 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
 
-    <ul>
-        <li id="apple">사과</li>
-        <li id="banana" style="background: greenyellow;">바나나</li>
-        <li id="grape">포도</li>
-        <li id="peach">복숭아</li>
-    </ul>
+  <ul>
+    <li id="apple">사과</li>
+    <li id="banana" style="background: greenyellow;">바나나</li>
+    <li id="grape">포도</li>
+    <li id="peach">복숭아</li>
+  </ul>
 
-    
-    <script>
-        // console.log(document.body.firstElementChild);
 
-        // const $banana = document.getElementById('banana');
-        const $banana = document.querySelector('#banana');
+  <script>
+    console.log(document.body.firstElementChild);  //ul
 
-        console.log($banana.attributes.id.value);
+    // const $banana = document.getElementById('banana');
+    const $banana = document.querySelector('#banana');
 
-        // banana.attributes.id.value = '수고요~';
+    console.log($banana.attributes.id.value);
 
-        $banana.style.background = 'red';
+    // banana.attributes.id.value = '수고요~';
 
-        //id가 grape인 요소노드를 취득하여
-        //배경색상을 violet으로 가로길이를 fit-content 변경
-        const $grape = document.getElementById('grape');
-        $grape.style.backgroundColor = 'violet';
-        $grape.style.width = 'fit-content';
+    $banana.style.background = 'red';
 
-        
 
-    </script>
+    //id가 grape인 요소노드를 취득하여
+    //배경색상을 violet으로 가로길이를 fit-content 변경
+
+    const $grape = document.querySelector('#grape');
+    $grape.style.background="violet";
+    $grape.style.width="fit-content";
+
+
+
+
+
+
+/*    
+    const $grape = document.getElementById('grape');
+    $grape.style.backgroundColor = 'violet';
+    $grape.style.width = 'fit-content';
+    */
+  </script>
 
 </body>
+
 </html>
