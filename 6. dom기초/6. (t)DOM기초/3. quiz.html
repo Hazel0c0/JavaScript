@@ -33,9 +33,9 @@
     //     if (i % 2 === 0) $liList[i].style.background = 'yellow';
     // }
 
-    $liList.forEach(($li, idx) => {
-      if (idx % 2 === 0) $li.style.background = 'yellow';
-    });
+    // $liList.forEach(($li, idx) => {
+    //   if (idx % 2 === 0) $li.style.background = 'yellow';
+    // });
 
 
     // const $oddElems = [...document.querySelectorAll('#list1 li:nth-child(odd)')];   
@@ -53,16 +53,20 @@
 
     //2. id="list1"인 요소에 <li> 요소중   
     //   짝수번째 요소만 선택후 배경색상 gray 적용  
-    $liList.forEach(($li, idx) => {
-      if (idx % 2 === 1)
-        $li.style.background = 'gray';
-    });
+    // $liList.forEach(($li, idx) => {
+    //   if (idx % 2 === 1)
+    //     $li.style.background = 'gray';
+    // });
 
 
     //3. id="list1"인 요소에 <li> 요소중   
     //  첫번째 <li>요소만 선택후 폰트색상 red 적용   
     const [$first, $second, ...$others] = $liList;
+    console.log(typeof($others));
+    console.log(typeof($liList));
+    
     const $last = $others[$others.length - 1];
+  
 
     $first.style.color = 'red';
     // $liList[0].style.color= 'red';
