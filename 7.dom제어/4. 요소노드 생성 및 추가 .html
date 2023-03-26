@@ -24,62 +24,61 @@
     // $newLi.textContent = '바나나';
 
     //새로운 노드를 자식으로 추가하는 명령
-//    $fruits.appendChild($newLi);
+    //    $fruits.appendChild($newLi);
 
     //-----------------
 
-// function make(tag,text){
-//   console.log(tag);
-// }
-// const aa = make('11');
+    // function make(tag,text){
+    //   console.log(tag);
+    // }
+    // const aa = make('11');
 
-// function make(a,b){
-//   console.log(a);
-//   console.log(b);
-//   console.log(a+b);
-// }
-// make(1);
+    // function make(a,b){
+    //   console.log(a);
+    //   console.log(b);
+    //   console.log(a+b);
+    // }
+    // make(1);
 
 
     // 태그이름과 텍스트를 전달받으면 태그를 생성하는 함수
     function makeTag(tagName, text) { // text 기본값 ''
       console.log(tagName);
       const $newTag = document.createElement(tagName);
-      if (text) 
-       console.log(text);
-       // ''  ->falsy 처리됨
-       
-       $newTag.textContent = text;
+      if (text)
+        console.log(text);
+      // ''  ->falsy 처리됨
+
+      $newTag.textContent = text;
       return $newTag
     }
 
     // console.log( makeTag('div','asd'));
-   const a = makeTag('li');
-  //  $fruits.appendChild(a);
+    const a = makeTag('li');
+    //  $fruits.appendChild(a);
 
-   //부모태그를 알려주면 자식을 추가해주는 함수
-   function appendNewTag($parent, $target) {
-     $parent.appendChild($target)
-    }
+    //부모태그를 알려주면 자식을 추가해주는 함수
+    //  function appendNewTag($parent, $target) {
+    //    $parent.appendChild($target)
+    //   }
 
     //만들면서 추가하는 함수
-/*    function append(items) {
+    function append(items) {
       if (!items.text) {
         item = {
           ...items,
           text: ''
         };
       }
-*/
+    }
 
-      // function append(items) {
-      //   appendNewTag(items.$parent, makeTag(items.tagName, items.text))
-      // }
+    function append(items) {
+      appendNewTag(items.$parent, makeTag(items.tagName, items.text))
+    }
 
-/*
-      // makeTag();
-      appendNewTag($parent, makeTag(tegName, text));
-*/
+
+    // makeTag();
+    appendNewTag($parent, makeTag(tegName, text));
   </script>
 
 </body>
