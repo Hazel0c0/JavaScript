@@ -26,11 +26,12 @@
         // 자식 노드 교체 (new, old)
         $fruits.replaceChild($newLi, $fruits.firstElementChild);
 
+
         // 자식 노드 삭제 
-        $fruits.removeChild($fruits.lastElementChild);
+//        $fruits.removeChild($fruits.lastElementChild);
 
         // 자식 노드 전체 삭제
-        // $fruits.innerHTML = '';
+ //       $fruits.innerHTML = '';
 
         // const children = [...$fruits.children];
 
@@ -38,7 +39,7 @@
         //     $fruits.removeChild($li);
         // }
 
-        [...$fruits.children].forEach($li => $fruits.removeChild($li));
+       [...$fruits.children].forEach($li => $fruits.removeChild($li));
 
     </script>
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>아무곳이나 클릭해주세요!</p>
+  <em class="msg"></em>
+
+  <hr>
+
+  <input type="text">
+
+  <script>
+    document.onclick = function (e) {
+      // console.log(e);   //객체이름 : PointerEvent
+
+      const {x,y}=e;
+      //e.x , e.y 에서 생략 가능
+
+      const $em = document.querySelector('.msg');
+      $em.textContent=`x:${x}, y:${y}`;
+    };
+
+    const $textInput = document.querySelector('[text=text]');
+    console.log($textInput);
+
+    $textInput.addEventListener('keyup', e => {
+      const $show = document
+      
+    })
+
+
+  </script>
+</body>
+
+</html>

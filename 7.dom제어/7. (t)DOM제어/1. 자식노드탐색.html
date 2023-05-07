@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-    
-    <!-- ul#fruits>li.fr*3 -->
-    <ul id="fruits">
-        <li class="fr apple">사과</li>
-        <li class="fr banana">바나나</li>
-        <li class="fr grape">포도</li>
-    </ul>
 
-    <div class="box">
-        <!-- <p></p> -->
-    </div>
+	<!-- ul#fruits>li.fr*3 -->
+	<ul id="fruits">
+		<li class="fr apple">사과</li>
+		<li class="fr banana">바나나</li>
+		<li class="fr grape">포도</li>
+	</ul>
 
-    <script>
-        // ul 요소노드를 취득
-        const $fruits = document.getElementById('fruits');
-   
-        const $children = [...$fruits.children];
+	<div class="box">
+		<p></p>
+	</div>
 
-        console.log($children);
+	<script>
+		// ul 요소노드를 취득
+		const $fruits = document.getElementById('fruits');
 
-        // const $first = $children[0];
-        // const $last = $children[$children.length - 1];
+		const $children = [...$fruits.children];
 
-        const $first = $fruits.firstElementChild;
-        const $last = $fruits.lastElementChild;
+		console.log($children);  // 배열
 
-        $first.style.fontSize = '2em';
-        $last.style.transform = 'rotate(180deg)';
-        $last.style.width = 'fit-content';
+		// const $first = $children[0];
+		// const $last = $children[$children.length - 1];
 
+		const $first = $fruits.firstElementChild;
+		const $last = $fruits.lastElementChild;
 
-        const $box = document.querySelector('.box');
-
-        // 자식 요소의 유무 확인
-        console.log(hasChildren($box));
+		$first.style.fontSize = '2em';
+		$last.style.transform = 'rotate(180deg)';
+		$last.style.width = 'fit-content';
 
 
-        function hasChildren($target) {
-            return !!$target.children.length;
-        }
+		const $box = document.querySelector('.box');
 
-    </script>
+		// 자식 요소의 유무 확인
+		console.log(hasChildren($box));
+
+
+		function hasChildren($target) {
+			return !!$target.children.length;
+		}
+	</script>
 
 </body>
+
 </html>
