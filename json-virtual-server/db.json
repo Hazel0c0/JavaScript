@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "account": "abc1234",
+      "userName": "주차킹",
+      "address": "캘리포니아"
+    },
+    {
+      "id": 2,
+      "account": "def9999",
+      "userName": "홍길똥",
+      "address": "한양도성"
+    },
+    {
+      "account": "hohoho",
+      "userName": "호호호",
+      "address": "히히히",
+      "id": 3
+    },
+    {
+      "account": "kkkk",
+      "userName": "낄낄이",
+      "address": "깔깔깔",
+      "id": 4
+    }
+  ],
+  "boards": []
+}
